@@ -13,7 +13,7 @@ cd healthcare/backend
 docker compose up --build
 
 # 3️⃣ Create Django superuser
-docker compose exec backend python manage.py createsuperuser
+docker compose exec healthcare  python manage.py createsuperuser
 
 # 4️⃣ Start frontend
 cd ../dashboard
@@ -79,8 +79,9 @@ Follow prompts to set username, email, and password.
 4️⃣ (Optional) Future database migrations
 If you make changes to models later:
 
-docker compose exec backend python manage.py makemigrations
-docker compose exec backend python manage.py migrate
+docker compose exec healthcare python manage.py makemigrations
+docker compose exec healthcare python manage.py migrate
+
 🎨 Frontend Setup (React)
 1️⃣ Install dependencies
 
