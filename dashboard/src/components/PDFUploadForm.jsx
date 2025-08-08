@@ -46,7 +46,7 @@ export default function PDFUploadForm() {
         uploadMutation.mutate(formData);
     };
     const fileInputRef = useRef(null);
-
+    // console.log(uploadMutation.error.response)
     return (
         <form onSubmit={handleUpload} className="mb-6 p-4 border rounded-lg shadow max-w-md mx-auto space-y-2 bg-white">
             <label className="block mb-2 font-semibold">Title:</label>
@@ -79,9 +79,13 @@ export default function PDFUploadForm() {
 
             {uploadMutation.isError && (
                 <p className="text-red-500 mt-2">
-                    {(uploadMutation.error)?.response?.data?.detail || 'Upload failed.'}
+                    {Array.isArray(uploadMutation.error?.response?.data)
+                        ? uploadMutation.error.response.data.join(' ')
+                        : uploadMutation.error?.response?.data?.detail
+                        || 'Upload failed.'}
                 </p>
             )}
+
         </form>
     );
 }

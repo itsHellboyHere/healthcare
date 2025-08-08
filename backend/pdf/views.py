@@ -20,6 +20,9 @@ class DocumentListCreateView(generics.ListCreateAPIView):
         file = self.request.FILES['file']
         if not file.name.endswith('.pdf'):
             raise serializers.ValidationError("Only PDF files allowed.")
+        max_size = 3 * 1024 * 1024  # 3 MB in bytes
+        if file.size > max_size:
+            raise serializers.ValidationError("File size must be under 3 MB.")
         serializer.save(user=self.request.user, file_size=file.size)
 
 class DocumentDownloadView(generics.RetrieveAPIView):
