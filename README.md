@@ -84,6 +84,7 @@ docker compose exec healthcare python manage.py migrate
 
 🎨 Frontend Setup (React)
 1️⃣ Install dependencies
+frontend is at healthcare/dashbaord
 
 cd ../dashboard
 npm install
