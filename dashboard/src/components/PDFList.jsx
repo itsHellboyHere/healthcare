@@ -33,7 +33,23 @@ export default function PDFList() {
         }
     });
 
-    if (isLoading) return <p>Loading PDFs...</p>;
+    if (isLoading) {
+        return (
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                {[...Array(3)].map((_, i) => (
+                    <div
+                        key={i}
+                        className="animate-pulse p-4 bg-gray-100 rounded-xl h-40"
+                    >
+                        <div className="h-6 bg-gray-200 rounded mb-4"></div>
+                        <div className="h-4 bg-gray-200 rounded mb-2"></div>
+                        <div className="h-4 bg-gray-200 rounded w-1/2"></div>
+                    </div>
+                ))}
+            </div>
+        );
+    }
+
     if (isError) return <p className="text-red-500">Failed to load documents.</p>;
     if (data?.length === 0) return <p className="text-gray-500 text-center mt-10">No documents uploaded yet.</p>;
 
