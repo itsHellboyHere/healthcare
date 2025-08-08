@@ -1,10 +1,5 @@
-# 🏥 Healthcare App
-
----
-
-## ⚡ Quick Start
-
-```bash
+🏥 Healthcare App
+⚡ Quick Start
 # 1️⃣ Clone repo
 git clone https://github.com/itsHellboyHere/healthcare.git
 
@@ -21,6 +16,7 @@ npm install
 npm start
 Backend → http://localhost:8000
 Frontend → http://localhost:3000
+
 
 ⚠️ Important Note About .env
 The /backend/.env file is included in this repository ONLY for testing purposes.
@@ -69,8 +65,8 @@ Start PostgreSQL and Django containers
 Run initial migrations automatically
 
 Backend will be available at:
-
 http://localhost:8000
+
 3️⃣ Create an admin superuser
 
 docker compose exec backend python manage.py createsuperuser
@@ -81,6 +77,7 @@ If you make changes to models later:
 
 docker compose exec backend python manage.py makemigrations
 docker compose exec backend python manage.py migrate
+
 🎨 Frontend Setup (React)
 1️⃣ Install dependencies
 
@@ -93,12 +90,14 @@ Frontend will be available at:
 
 http://localhost:3000
 🔌 API Endpoints
+
 Auth
 Method	Endpoint	Description
 POST	http://localhost:8000/api/auth/login/	Login & get tokens
 POST	http://localhost:8000/api/auth/sign-up/	Register new user
 
 Documents
+
 Method	Endpoint	Description
 GET	http://localhost:8000/api/documents/	List all uploaded documents
 POST	http://localhost:8000/api/documents/	Upload a new document (PDF)
@@ -119,4 +118,3 @@ docker compose down -v
 docker compose up --build
 📜 License
 This project is for educational and testing purposes only.
-
